@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState(""); //***This Version better for states
   const [enteredDate, setEnteredDate] = useState("");
@@ -13,7 +13,7 @@ const ExpenseForm = () => {
 }); */
 
   const titleChangeHandler = (event) => {
-    setEnteredTitle(event.target.value); //Tracks Value Typed and Sets it //***** Better for states 1ST TYPE
+    setEnteredTitle(event.target.value); //Tracks Value Typed and Sets it //***** Better for states (1ST TYPE)
 
     /*setUserInput({
       ...userInput,                          //Brings Previous values from userInput(ex:enteredTitle and enteredDate) 2ND TYPE
@@ -39,10 +39,10 @@ const ExpenseForm = () => {
       date: new Date(enteredDate),
     };
 
-    console.log(expenseData);
-    setEnteredTitle('');
-    setEnteredAmount('');
-    setEnteredDate('');
+    props.onSaveExpenseData(expenseData);
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
   };
 
   return (
