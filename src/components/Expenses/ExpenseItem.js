@@ -4,8 +4,9 @@ import React from "react"; //{ useState } Needed to load useState to update Scre
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
-  //props allows for the trasfer of data from different components
+  //props allows for the transfer of data from different components
   return (
+    <li>
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
@@ -14,6 +15,7 @@ const ExpenseItem = (props) => {
       </div>
       
     </Card>
+    </li>
   );
 };
 
